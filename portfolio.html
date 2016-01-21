@@ -4,22 +4,17 @@ permalink: /portfolio/
 ---
 
 <section class="ae-container-fluid rk-main">
-  <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
+  <section class="ae-container-fluid ae-container-fluid--inner loading rk-portfolio">
+    <div class="rk-portfolio__items">
     {% for post in site.posts %}
-      {% cycle 'open line': '<div class="ae-grid">', '', '', '' %}
-      <div class="ae-grid__item item-lg--auto">
-        <a href="{{ post.url | prepend: site.baseurl }}" class="rk-item">
-          <img src="{{ '/img/posts/' | append: post.picture | prepend: site.baseurl }}" alt="{{ post.title }}">
-          <div class="item-meta">
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.tags | join: ' ' }}</p>
-          </div>
-        </a>
-      </div>
-      {% cycle 'close line': '', '', '', '</div>' %}
+      <a href="{{ post.url | prepend: site.baseurl }}" class="rk-item rk-item--flex rk-size-4 rk-square"
+        style="background-image: url('{{ '/img/posts/' | append: post.picture | prepend: site.baseurl }}');">
+        <div class="item-meta">
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.tags | join: ' ' }}</p>
+        </div>
+      </a>
     {% endfor %}
-    {% cycle 'close line': '', '', '', '</div>' %}
-    {% cycle 'close line': '', '', '', '</div>' %}
-    {% cycle 'close line': '', '', '', '</div>' %}
+    </div>
   </section>
 </section>
