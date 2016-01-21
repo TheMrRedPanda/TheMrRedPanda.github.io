@@ -1,23 +1,15 @@
 ---
 layout: default
 ---
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+<section class="ae-container-fluid rk-main">
+  <section class="ae-container-fluid ae-container-fluid--inner loading rk-portfolio">
+    <div class="rk-portfolio__items">
+      <a href="portfolio-item.html" class="rk-item rk-item--flex rk-size-12 rk-landscape" style="background-image: url('/img/posts/project-1.jpg');">
+        <div class="item-meta">
+          <h2>Essential Stationery</h2>
+          <p>Branding</p>
+        </div>
+      </a>
+    </div>
+  </section>
+</section>
