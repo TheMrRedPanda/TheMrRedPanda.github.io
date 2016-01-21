@@ -1,15 +1,54 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+<section class="ae-container-fluid ae-container-fluid--full">
+  <header class="rk-portfolio-cover item-inside-{% if page.landscape %}landscape{% else %}portrait{% endif %}"
+    style="background-image: url('{{ page.picture | replace: '.jpg', '@2x.jpg' | replace: '.png', '@2x.png' | prepend: '/img/posts/' | prepend: site.baseurl }}');">
+    <div class="item-inside__meta">
+      <h1 class="ae-u-bolder rk-portfolio-title ">{{ page.title }}</h1>
+      <p class="ae-theta rk-portfolio-category ">{{ page.tags | join: ' ' }}</p>
+    </div>
   </header>
-
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
+  <div class="ae-container-fluid">
+    <div class="ae-grid ae-grid--collapse rk-portfolio-info">
+      <div class="ae-grid__item item-lg-8 item-sm--center au-xs-ta-center au-lg-ta-left">
+        <h2 class="rk-portfolio-inner-title">
+          {% if page.longtitle %}
+            {{ page.longtitle }}
+          {% else %}
+            {{ page.title }}
+          {% endif %}
+        </h2>
+      </div>
+      <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right rk-portfolio-details">
+        {% if page.client %}
+          <p class="rk-portfolio-inner-client "><span class="ae-lambda">Клиент: </span><span class="ae-u-bolder">{{ page.client }}</span></p>
+        {% endif %}
+        {% if page.clientwebsite %}
+          <p class="au-underline rk-portfolio-inner-website"><a href="http://{{ page.clientwebsite}}" class="ae-kappa">{{ page.clientwebsite }}</a></p>
+        {% endif %}
+        <p class="ae-kappa ae-u-bold rk-portfolio-inner-date">{{ page.date | date: '%d.%m.%Y' }}</p>
+      </div>
+    </div>
   </div>
-
-</article>
+  {{ content }}
+  <div class="ae-container-fluid au-pt-4 au-pb-4">
+    <div class="group-buttons">
+      {% if page.previous %}
+        <a href="{{ page.previous.url | prepend: site.baseurl }}" class="arrow-button arrow-button--reverse arrow-button--center"> Предыдущий проект
+          <svg>
+            <use xlink:href="{{ "/img/symbols.svg#arrow" | prepend: site.baseurl }}" />
+          </svg>
+        </a>
+      {% endif %}
+      {% if page.next %}
+        <a href="{{ page.next.url | prepend: site.baseurl }}" class="arrow-button arrow-button--center"> Следующий проект
+          <svg>
+            <use xlink:href="{{ "/img/symbols.svg#arrow" | prepend: site.baseurl }}" />
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>

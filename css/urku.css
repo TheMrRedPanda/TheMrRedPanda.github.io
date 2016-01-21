@@ -1,9 +1,9 @@
-/* * * * * * * * * * * * * * * * * * * * *\ 
- UrkuPortfolio v1.0.0 
- Urku is a prtfolio template with a very clean style. 
- (c) 2016 Lionel <lionel@pixeden.com> (http://pixeden.com) 
- https://bitbucket.org/elrumordelaluz/urkuportfolio 
- Licensed under  MIT 
+/* * * * * * * * * * * * * * * * * * * * *\
+ UrkuPortfolio v1.0.0
+ Urku is a prtfolio template with a very clean style.
+ (c) 2016 Lionel <lionel@pixeden.com> (http://pixeden.com)
+ https://bitbucket.org/elrumordelaluz/urkuportfolio
+ Licensed under  MIT
 \* * * * * * * * * * * * * * * * * * * * */
 @charset "UTF-8";
 body {
@@ -1190,19 +1190,21 @@ body {
   margin-top: 6rem;
 }
 
-.item-inside-1 {
-  background-image: url("../img/project-1.jpg");
+.item-inside-landscape {
   background-position: 50% 100%;
   background-size: 350%;
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
-  .item-inside-1 {
-    background-image: url("../img/project-1h.jpg");
-  }
+.item-inside-portrait {
+  background-position: 50% 100%;
+  background-size: 130%;
 }
 @media (min-width: 40em) {
-  .item-inside-1 {
+  .item-inside-landscape {
     background-size: 150%;
+  }
+  .item-inside-portrait {
+    background-position: 50% 80%;
+    background-size: 100%;
   }
 }
 
