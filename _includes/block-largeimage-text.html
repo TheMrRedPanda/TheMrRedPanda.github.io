@@ -1,0 +1,21 @@
+<div class="ae-grid ae-grid--collapse{% if include.margin and include.margin == 'top' %} au-xs-ptp-1{% endif %}">
+  <div class="ae-grid__item item-lg-8">
+    <img src="{{ include.image | prepend: '/img/posts/' | prepend: site.baseurl }}" alt="{{ include.title }}">
+  </div>
+  <div class="ae-grid__item item-lg-3 item-lg--offset-1 au-lg-ptp-1">
+    {% assign texts = include.text | newline_to_br | split: '<br />' %}
+    {% for text_line in texts %}
+      {% assign clean_line = text_line | strip %}
+      {% if clean_line and clean_line != '' %}
+        {% assign last_line = text_line %}
+      {% endif %}
+    {% endfor %}
+    {% for text_line in texts %}
+      {% assign clean_line = text_line | strip %}
+      {% if clean_line and clean_line != '' %}
+        <p{% if text_line == last_line %} class="au-mb-3"{% endif %}>{{ clean_line }}</p>
+      {% endif %}
+    {% endfor %}
+    <p class="ae-u-bolder">{{ include.title }}</p>
+  </div>
+</div>
