@@ -1,0 +1,12 @@
+<div class="ae-grid ae-grid--collapse au-xs-ptp-1 au-xs-pbp-1">
+  <div class="ae-grid__item item-lg-8 item-lg--offset-2">
+    <h4 class="ae-u-bolder">{{ include.title }}</h4>
+    {% assign texts = include.text | newline_to_br | split: '<br />' %}
+    {% for text_line in texts %}
+      {% assign clean_line = text_line | strip %}
+      {% if clean_line and clean_line != '' %}
+        <p class="ae-eta">{{ clean_line }}</p>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

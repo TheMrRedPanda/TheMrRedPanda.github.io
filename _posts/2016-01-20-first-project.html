@@ -19,13 +19,12 @@ landscape: true
 {% endcapture %}
 {% include block-largeimage-text.html image="inner-2.jpg" title="Right Box Small Text" text=text %}
 
-<div class="ae-grid ae-grid--collapse au-xs-ptp-1 au-xs-pbp-1">
-  <div class="ae-grid__item item-lg-8 item-lg--offset-2">
-    <h4 class="ae-u-bolder">Full Wide Text</h4>
-    <p class="ae-eta">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p class="ae-eta">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
-  </div>
-</div>
+{% capture text %}
+  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+{% endcapture %}
+{% include block-text.html title="Full Wide Text" text=text %}
+
 <div class="ae-grid ae-grid--collapse">
   <div class="ae-grid__item item-lg--auto"><img src="{{ '/img/posts/project-1.jpg' | prepend: site.baseurl }}" alt="Urku Portfolio"></div>
 </div>
