@@ -25,9 +25,8 @@ landscape: true
 {% endcapture %}
 {% include block-text.html title="Full Wide Text" text=text %}
 
-<div class="ae-grid ae-grid--collapse">
-  <div class="ae-grid__item item-lg--auto"><img src="{{ '/img/posts/project-1.jpg' | prepend: site.baseurl }}" alt="Urku Portfolio"></div>
-</div>
+{% include block-image.html image="project-1.jpg" title="Full width image" %}
+
 {% capture text %}
   Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
   It includes a A6 flyer, A5 folder, A4 horizontal paper and a business card mockup. You can easily put your own graphics and create a new layout according to your needs.
