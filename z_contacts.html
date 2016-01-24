@@ -1,0 +1,14 @@
+---
+title: Контакты
+permalink: /contacts/
+---
+
+<section class="ae-container-fluid rk-main">
+  <section class="ae-container-fluid ae-container-fluid--inner loading rk-portfolio">
+    {% capture text %}
+      Напишите нам, позвоните нам
+      <span class="contact__phone"><span class="rk-light-color">Телефон </span><a href="tel:+77772390420">+7 (777) 239-0420</a></span><br><span class="contact__phone"> <span class="rk-light-color">Skype &nbsp;&nbsp;&nbsp;&nbsp; </span><a href="skype:themrredpanda?chat">themrredpanda</a></span><br><span class="contact__email au-block au-truncate"> <span class="rk-light-color">Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><a href="mailto:{{ site.email }}">{{ site.email }}</a></span>
+    {% endcapture %}
+    {% include block-rightboxtext.html image="inner-3.jpg" title="Контакты" text=text %}
+  </section>
+</section>
