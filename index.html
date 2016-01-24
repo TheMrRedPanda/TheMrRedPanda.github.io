@@ -1,10 +1,72 @@
 ---
-layout: default
+layout: frontpage
 ---
-<section class="ae-container-fluid rk-main">
-  <section class="ae-container-fluid ae-container-fluid--inner loading rk-portfolio">
-    <div class="rk-portfolio__items">
-      {% include featured_project.html name="first-project" size="rk-size-12 rk-landscape" %}
-    </div>
-  </section>
-</section>
+
+{% include feat_1landscape.html landscape1="first-project" %}
+
+{% include feat_2portrait.html
+  portrait1="second-project"
+  portrait2="second-project"
+%}
+
+
+
+{% comment %}
+
+
+{% include feat_1landscape.html landscape1="first-project" %}
+
+{% include feat_2portrait.html
+  portrait1="second-project"
+  portrait2="second-project"
+%}
+
+{% include feat_2landscape.html
+  landscape1="first-project"
+  landscape2="first-project"
+%}
+
+{% include feat_2landscape_1portrait.html
+  landscape1="first-project"
+  landscape2="first-project"
+  portrait1="second-project"
+%}
+
+{% include feat_1portrait_2landscape.html
+  portrait1="second-project"
+  landscape1="first-project"
+  landscape2="first-project"
+%}
+
+{% include feat_2square_1square.html
+  square1="first-project"
+  square2="first-project"
+  square3="second-project"
+%}
+
+{% include feat_1square_2square.html
+  square1="first-project"
+  square2="first-project"
+  square3="second-project"
+%}
+
+{% include feat_3square.html
+  square1="first-project"
+  square2="first-project"
+  square3="second-project"
+%}
+
+{% include feat_3landscape.html
+  landscape1="first-project"
+  landscape2="first-project"
+  landscape3="second-project"
+%}
+
+{% include feat_3portrait.html
+  portrait1="first-project"
+  portrait2="first-project"
+  portrait3="second-project"
+%}
+
+
+{% endcomment %}

@@ -1,0 +1,29 @@
+{% assign lookup_posts = site.posts | where: "name", include.portrait1 %}
+{% for post in lookup_posts %}
+<a href="{{ post.url | prepend: site.baseurl }}" class="rk-item rk-item--flex rk-size-6 rk-portrait" style="background-image: url('{{ post.picture | prepend: '/img/posts/' | prepend: site.baseurl }}');">
+  <div class="item-meta">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.tags | join ' ' }}</p>
+  </div>
+</a>
+{% endfor %}
+<div class="rk-items-cont rk-size-6">
+  {% assign lookup_posts = site.posts | where: "name", include.landscape1 %}
+  {% for post in lookup_posts %}
+  <a href="{{ post.url | prepend: site.baseurl }}" class="rk-item rk-item--flex rk-size-12 rk-landscape" style="background-image: url('{{ post.picture | prepend: '/img/posts/' | prepend: site.baseurl }}');">
+    <div class="item-meta">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.tags | join ' ' }}</p>
+    </div>
+  </a>
+  {% endfor %}
+  {% assign lookup_posts = site.posts | where: "name", include.landscape2 %}
+  {% for post in lookup_posts %}
+  <a href="{{ post.url | prepend: site.baseurl }}" class="rk-item rk-item--flex rk-size-12 rk-landscape" style="background-image: url('{{ post.picture | prepend: '/img/posts/' | prepend: site.baseurl }}');">
+    <div class="item-meta">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.tags | join ' ' }}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
