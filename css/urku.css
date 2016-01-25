@@ -1164,6 +1164,9 @@ body {
 .item-inside__meta {
   text-align: center;
 }
+.item-inside__meta--white {
+  color: white;
+}
 .item-inside__meta--contrast:before {
   background-color: rgba(255, 255, 255, .3);
   content: "";

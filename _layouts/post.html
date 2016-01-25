@@ -5,23 +5,21 @@ layout: default
 <section class="ae-container-fluid ae-container-fluid--full">
   <header class="rk-portfolio-cover item-inside-{% if page.landscape %}landscape{% else %}portrait{% endif %}"
     style="background-image: url('{{ page.picture | replace: '.jpg', '@2x.jpg' | replace: '.png', '@2x.png' | prepend: '/img/posts/' | prepend: site.baseurl }}');">
-    <div class="item-inside__meta">
+    <div class="item-inside__meta{% if page.inverse_title %} item-inside__meta--white{% endif %}{% if page.contrast_title %} item-inside__meta--contrast{% endif %}">
       <h1 class="ae-u-bolder rk-portfolio-title ">{{ page.title }}</h1>
       <p class="ae-theta rk-portfolio-category ">{{ page.tags | join: ' ' }}</p>
     </div>
   </header>
   <div class="ae-container-fluid">
     <div class="ae-grid ae-grid--collapse rk-portfolio-info">
-      <div class="ae-grid__item item-lg-8 item-sm--center au-xs-ta-center au-lg-ta-left">
-        <h2 class="rk-portfolio-inner-title">
-          {% if page.longtitle %}
-            {{ page.longtitle }}
-          {% else %}
-            {{ page.title }}
-          {% endif %}
-        </h2>
-      </div>
-      <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right rk-portfolio-details">
+      {% if page.longtitle %}
+        <div class="ae-grid__item item-lg-8 item-sm--center au-xs-ta-center au-lg-ta-left">
+          <h2 class="rk-portfolio-inner-title">
+              {{ page.longtitle }}
+          </h2>
+        </div>
+      {% endif %}
+      <div class="ae-grid__item {% if page.longtitle %}item-lg-4 au-lg-ta-right{% else %}item-lg-12 au-lg-ta-left{% endif %} au-xs-ta-center rk-portfolio-details">
         {% if page.client %}
           <p class="rk-portfolio-inner-client "><span class="ae-lambda">Клиент: </span><span class="ae-u-bolder">{{ page.client }}</span></p>
         {% endif %}
