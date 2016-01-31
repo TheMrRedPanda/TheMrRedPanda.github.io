@@ -1,0 +1,41 @@
+---
+name: Lexus 4cars
+title: Презентация обновленных моделей Lexus LX, RX, ES
+inverse_title: true
+tags: "Презентация, Пригласительный билет, Интерактивный стенд"
+picture: Lexus_4cars_Main.jpg
+landscape: true
+client: Lexus Алматы
+clientwebsite: lexus-almaty.kz
+
+---
+
+{% capture text %}
+   Напечатаны в один цвет на зеркальной бумаге.
+{% endcapture %}
+{% include block-text.html title="Пригласительные билеты" text=text %}
+
+{% include block-image.html image="Lexus_4cars_ticket_Face.jpg" title="Full width image" %}
+
+{% include block-image.html image="Lexus_4cars_ticket_Back.jpg" title="Full width image" %}
+
+{% capture text %}
+  Тест определяет, в развлекательной форме, какой из представленных автомобилей Lexus подходит именно вам.
+{% endcapture %}
+{% include block-leftboxtext.html image="Lexus_4cars_Test_Home.jpg" title="Интерактивный дисплей" text=text margin="top" %}
+
+{% capture text %}
+  Можно выбрать один из предложенных ответов на вопрос, например: о том какой отдых вы предпочитаете, что для вас является необходимым в автомобиле, что вы цените в нем больше всего, что вас вдохволяет, как вы планируете свой день. В конце теста вам порекомендуют присомтрется к одному или, если вы разносторонняя личность, ко всем представленным автомобилям.
+{% endcapture %}
+{% include block-rightboxtext.html image="Lexus_4cars_Test_Question.jpg" title="Вопросы" text=text %}
+
+{% capture text %}
+  Для каждой из представленных моделей поставлены led экраны транслирующие промо ролики и многогранные названия моделей выполненые из зеркального пластика.
+{% endcapture %}
+{% include block-text.html title="Стенды с автомобилями" text=text %}
+
+{% include block-image.html image="Lexus_4cars_Stand_LX.jpg" title="Full width image" %}
+
+{% include block-image.html image="Lexus_4cars_Stand_RX.jpg" title="Full width image" %}
+
+{% include block-image.html image="Lexus_4cars_Stand_ES.jpg" title="Full width image" %}
