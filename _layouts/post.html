@@ -7,7 +7,7 @@ layout: default
     style="background-image: url('{{ page.picture | replace: '.jpg', '@2x.jpg' | replace: '.png', '@2x.png' | prepend: '/img/posts/' | prepend: site.baseurl }}');">
     <div class="item-inside__meta{% if page.inverse_title %} item-inside__meta--white{% endif %}{% if page.contrast_title %} item-inside__meta--contrast{% endif %}">
       <h1 class="ae-u-bolder rk-portfolio-title ">{{ page.title }}</h1>
-      <p class="ae-theta rk-portfolio-category ">{{ page.tags | join: ' ' }}</p>
+      <p class="ae-theta rk-portfolio-category ">{{ page.tags | join: ', ' }}</p>
     </div>
   </header>
   <div class="ae-container-fluid">

@@ -12,6 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Дизайн, полиграфия, сайты
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://redpanda.pro" # the base hostname & protocol for your site
+maxtags: 9
 # twitter_username: jekyllrb
 # github_username:  jekyll
 
@@ -30,3 +31,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  -
+    scope:
+      path: "portfolio"
+    values:
+      layout: "tag"

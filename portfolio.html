@@ -4,14 +4,23 @@ permalink: /portfolio/
 ---
 
 <section class="ae-container-fluid rk-main">
+  {% comment %}
+    <ul>
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+      <li>{{tag[0]}} ({{ tag | last | size }})</li>
+    {% endfor %}
+    </ul>
+  {% endcomment %}
   <section class="ae-container-fluid ae-container-fluid--inner loading rk-portfolio">
+    {% include tags.html %}
     <div class="rk-portfolio__items">
     {% for post in site.posts %}
       <a href="{{ post.url | prepend: site.baseurl }}" class="rk-item rk-item--flex rk-size-4 rk-square"
         style="background-image: url('{{ '/img/posts/' | append: post.picture | prepend: site.baseurl }}');">
         <div class="item-meta">
           <h2>{{ post.title }}</h2>
-          <p>{{ post.tags | join: ' ' }}</p>
+          <p>{{ post.tags | join: ', ' }}</p>
         </div>
       </a>
     {% endfor %}

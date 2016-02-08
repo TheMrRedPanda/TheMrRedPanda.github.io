@@ -16,8 +16,40 @@
     <nav class="rk-navigation">
       <ul class="rk-menu">
         {% for a_page in site.pages %}
-          {% if a_page.title %}
-            <li class="{% if page.url == a_page.url %}active {% endif %}rk-menu__item"><a href="{{ a_page.url | prepend: site.baseurl }}" class="rk-menu__link">{{ a_page.title }}</a></li>
+          {% assign url_path = a_page.url | split: '/' %}
+          {% if a_page.url == '/portfolio/' or a_page.title and url_path[1] != 'portfolio' %}
+            <li class="{% if page.url == a_page.url %}active {% endif %}rk-menu__item">
+              <a href="{{ a_page.url | prepend: site.baseurl }}" class="rk-menu__link">{{ a_page.title }}</a>
+              {% if a_page.url == "/portfolio/" %}
+                <nav class="rk-menu__sub">
+                  <ul class="rk-container">
+                    {% assign maxt = 0 %}
+                    {% for t in site.tags %}
+                      {% if maxt < t[1].size %}
+                        {% assign maxt = t[1].size %}
+                      {% endif %}
+                    {% endfor %}
+                    {% assign tags = site.tags | sort %}
+                    {% assign tagsshown = 0 %}
+                    {% for i in (0..maxt) %}
+                      {% for tag in tags %}
+                        {% if maxt == tag[1].size %}
+                          <li class="rk-menu__item"><a href="{{ a_page.url }}{{ tag | first | uri_escape }}" class="rk-menu__link">{{ tag | first }}</a></li>
+                          {% assign tagsshown = tagsshown | plus:1 %}
+                          {% if tagsshown >= site.maxtags %}
+                            {% break %}
+                          {% endif %}
+                        {% endif %}
+                      {% endfor %}
+                      {% if tagsshown >= site.maxtags %}
+                        {% break %}
+                      {% endif %}
+                      {% assign maxt = maxt | minus:1 %}
+                    {% endfor %}
+                  </ul>
+                </nav>
+              {% endif %}
+            </li>
           {% endif %}
         {% endfor %}
       </ul>

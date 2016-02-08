@@ -1,34 +1,25 @@
 ---
-name: first-project
-title:  "Супер-пупер проект"
-tags: дизайн промо
-picture: project-1.jpg
+name: RB_F1
+title: Адаптация материалов RedBull F1 Showrun
+inverse_title: true
+tags: [Билборд, Постер, Флаер, Пригласительный билет]
+picture: RB_F1_Main.jpg
 landscape: true
+client: Red Bull
+clientwebsite: redbull.com/kz/kk
+
 ---
 
 {% capture text %}
-  A series of essential stationery format to showcase your branding projects.
-  It includes a A6 flyer, A5 folder, A4 horizontal paper and a business card mockup. You can easily put your own graphics and create a new layout according to your needs.
+   Оформлены в стиле основной рекламной компании.
 {% endcapture %}
-{% include block-leftboxtext.html image="inner-1.jpg" title="Left Box Text" text=text margin="top" %}
+{% include block-text.html title="Промо флаер" text=text %}
 
-{% capture text %}
-  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
-{% endcapture %}
-{% include block-text.html title="Full Wide Text" text=text %}
+{% include block-image.html image="RB_F1_Flyer.jpg" title="Full width image" %}
 
-{% include block-image.html image="project-1.jpg" title="Full width image" %}
-
-{% capture text %}
-  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-  It includes a A6 flyer, A5 folder, A4 horizontal paper and a business card mockup. You can easily put your own graphics and create a new layout according to your needs.
-{% endcapture %}
-{% include block-rightboxtext.html image="inner-3.jpg" title="Right Box Text" text=text %}
 
 
 {% comment %}
-
                             @2x
 Landscape:  1240 × 830   2480 x 1660
 Portrait:   616 x 830    1232 x 1660

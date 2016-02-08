@@ -2,8 +2,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{% if page.title %}{{ page.title }} {% endif %},,,^..^,,,~ {{ site.title }}</title>
+  {% assign url_path = page.url | split: '/' %}
+  {% assign page_title = page.path | split: '/' | last | replace: '.html', '' %}
+  <title>{% if page.title %}{{ page.title }} {% elsif url_path[1] == 'portfolio' and page.url != '/portfolio/' %}{{ page_title | prepend: 'Проекты :: '}} {% endif %},,,^..^,,,~ {{ site.title }}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <link rel="stylesheet" href="{{ "/css/aurora-pack.min.css" | prepend: site.baseurl }}">

@@ -4,7 +4,7 @@
   <a href="{{ post.url | prepend: site.baseurl }}" class="rk-item rk-item--flex rk-size-12 rk-square" style="background-image: url('{{ post.picture | prepend: '/img/posts/' | prepend: site.baseurl }}');">
     <div class="item-meta">
       <h2>{{ post.title }}</h2>
-      <p>{{ post.tags | join ' ' }}</p>
+      <p>{{ post.tags | join: ', ' }}</p>
     </div>
   </a>
   {% endfor %}
@@ -13,7 +13,7 @@
   <a href="{{ post.url | prepend: site.baseurl }}" class="rk-item rk-item--flex rk-size-12 rk-square" style="background-image: url('{{ post.picture | prepend: '/img/posts/' | prepend: site.baseurl }}');">
     <div class="item-meta">
       <h2>{{ post.title }}</h2>
-      <p>{{ post.tags | join ' ' }}</p>
+      <p>{{ post.tags | join: ', ' }}</p>
     </div>
   </a>
   {% endfor %}
@@ -23,7 +23,7 @@
 <a href="{{ post.url | prepend: site.baseurl }}" class="rk-item rk-item--flex rk-size-8 rk-square" style="background-image: url('{{ post.picture | prepend: '/img/posts/' | prepend: site.baseurl }}');">
   <div class="item-meta">
     <h2>{{ post.title }}</h2>
-    <p>{{ post.tags | join ' ' }}</p>
+    <p>{{ post.tags | join: ', ' }}</p>
   </div>
 </a>
 {% endfor %}

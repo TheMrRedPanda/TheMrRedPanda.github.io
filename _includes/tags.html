@@ -1,0 +1,22 @@
+{% assign page_title = page.path | split: '/' | last | replace: '.html', '' %}
+<div class="au-xs-ta-center au-lg-ta-left">
+  <ul class="rk-menu rk-categories-menu">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+      {% assign tag_page_exists = false %}
+      {% for a_page in site.pages %}
+        {% assign page_path = a_page.path | split: '/' %}
+        {% assign tag_name = page_path[1] | replace: '.html', '' %}
+        {% if page_path[0] == 'portfolio' and tag_name == tag[0] %}
+          {% assign tag_page_exists = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      {% if tag_page_exists %}
+        <li class="rk-menu__item{% if page_title == tag[0] %} active{% endif %}">
+          <a href="/portfolio/{{ tag | first | uri_escape }}" class="rk-menu__link">{{ tag | first }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
