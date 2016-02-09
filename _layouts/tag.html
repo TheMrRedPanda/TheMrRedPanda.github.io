@@ -2,9 +2,9 @@
 layout: default
 ---
 
+{% assign page_title = page.path | split: '/' | last | replace: '.html', '' %}
 <section class="ae-container-fluid rk-main">
   <section class="ae-container-fluid ae-container-fluid--inner loading rk-portfolio">
-    {% include tags.html %}
     <div class="rk-portfolio__items">
     {% for post in site.tags[page_title] %}
       <a href="{{ post.url | prepend: site.baseurl }}" class="rk-item rk-item--flex rk-size-4 rk-square"
