@@ -1128,6 +1128,12 @@ body {
 
 .rk-portfolio-title {
   letter-spacing: .0359em;
+  font-size: 1.96874rem;
+}
+@media (min-width: 40em) {
+  .rk-portfolio-title {
+    font-size: 2.95312rem
+  }
 }
 
 .rk-portfolio-category {
