@@ -1819,7 +1819,7 @@ body {
   position: absolute;
   visibility: hidden;
   width: 100%;
-  z-index: -1;
+  z-index: 10;
 }
 .rk-menu__sub ul {
   display: -webkit-box;
