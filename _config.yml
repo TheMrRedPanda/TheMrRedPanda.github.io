@@ -9,7 +9,7 @@
 title: Redpanda
 email: info@redpanda.pro
 description: > # this means to ignore newlines until "baseurl:"
-  Дизайн, полиграфия, сайты
+  Дизайн и верстка полиграфической продукции, макетирование сайтов, фирменные стили и логотипы. Фото коллажирование, ретушь, иллюстрации.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://redpanda.pro" # the base hostname & protocol for your site
 maxtags: 9
